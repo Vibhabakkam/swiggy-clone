@@ -1,31 +1,60 @@
-import "./Component.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+function Login() {
+    
+    const [userData, setUserData] = useState({ email: "", password: "" });
+    // console.log(userData, "userData check here");
+    const router2 = useNavigate();
 
-function Login(props){
-    return(
-        <div id='login'>
-            <div className="login-page">
-                <div onClick={props.onClose}> X </div>
-                <div>
-                    <div>
-                        <h2>Log in</h2>
-                        <p> <strong> or </strong> create an account</p>
-                    </div>
-                    <div></div>
-                </div>
+    function handleSubmit(e) {
+        e.preventDefault();
+        var dataFromLs =JSON.parse(localStorage.getItem("userData"));
 
-                <div>
-                    <form>
-                        <input type='number' placeholder="Phone Number" />
-                    </form>
-                </div>
+    var flag= false;
 
-                <div>
-                    <button>Continue</button>
-                    <p class='tc'>By creating an account, I accept the <strong>Terms & Conditions & Privacy Policy</strong></p>
-                </div>
-            </div>
-        </div>
+    for (var i=0 ; i< dataFromLs.length ; i++){
+        if(dataFromLs[i].email === userData.email  && dataFromLs[i].password === userData.password){
+            flag =true;
+        }
+    }
+
+    if(flag){
+       
+        var user ={};
+        user["current-user-email"]= userData.email;
+        localStorage.setItem("currentUser",JSON.stringify(user));
+        router2('/Home');
+        alert("Login sucessful");
+
+    }
+    else{
+        alert("Email or Password does not match");
+    }
+    }
+
+    function updatingData(e) {
+        var name = e.target.name;
+        var value = e.target.value;
+        // console.log(e.target.name, e.target.value, "updatingData");
+        setUserData({ ...userData, [name]: value })
+    }
+
+    return (
+
+        <>
+            <form onSubmit={(event) => handleSubmit(event)}>
+                <label>Email</label><br />
+                <input onChange={updatingData} name='email' value={userData.email} type="email" placeholder="Type your Email" /><br />
+                <label>Password</label><br />
+                <input onChange={updatingData} name='password' value={userData.password} type="password" placeholder="Type your Passwrd" /><br />
+                <button>Have a referral code?</button><br />
+                <input type="submit" value="Login" />
+                <div>By creating an account, I accept the Terms & Conditions & Privacy Policy</div>
+
+            </form>
+
+        </>
     )
-}
 
+}
 export default Login;
