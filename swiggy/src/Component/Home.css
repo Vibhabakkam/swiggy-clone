@@ -136,8 +136,13 @@
   .display-food-data >div >div img{
     height:100%;
     width:100%;
+  
+  
   }
-  .display-food-data >div >p{
+  .display-food-data >div >div>h4{
+    margin-left: 80px;
+  }
+  .display-food-data>div>p{
     height: 8%;
     font-size: 1vw;
     overflow: auto;

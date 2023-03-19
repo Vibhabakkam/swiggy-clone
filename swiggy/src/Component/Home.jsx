@@ -5,12 +5,13 @@ import "./Home.css";
 
 function Home() {
     const[data, setData] = useState();
-
+ 
     useEffect(() => {
         fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
         .then(res => res.json())
         .then(Json => setData(Json.drinks));
     }, []);
+    console.log(setData);
     
 
   return (
