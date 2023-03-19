@@ -1,0 +1,150 @@
+.navbar{
+    width:100%;
+    height:60px;
+    position: sticky;
+    top:0;
+    background-color: white;
+  }
+  .navbar >div{
+    display:flex;
+    justify-content: space-between;
+    height:100%;
+    width:80%;
+    margin:auto;
+  }
+  .navbar-l{
+    display:flex;
+    justify-content: space-around;
+    width:40%;
+    align-items: center;
+  }
+  .navbar-l >div:nth-child(1){
+    
+    width:20%;
+    height:100%;
+  }
+  .navbar-l >div:nth-child(1) >img{
+    width:100%;
+    height:100%;
+  }
+  .navbar-l >div:nth-child(2){
+    color:#a0a3aa;
+  }
+  .navbar-l >div:nth-child(2) >p{
+    font-size:1vw;
+  }
+  .navbar-l >div:nth-child(2) >p >strong{
+    text-decoration: underline;
+    color:#2b1e16;
+  }
+  .navbar-r{
+    display:flex;
+    justify-content: space-evenly;
+    width:50%;
+    
+    align-items: center;
+  }
+  .navbar-r >div{
+    display:flex;
+    justify-content: space-evenly;
+  }
+  .navbar-r >div p{
+    font-size: 1vw;
+    font-weight: 500;
+  }
+  .navbar-r >div p >sup{
+    color:#fc8019;
+  }
+  .index-top{
+    
+    width:100%;
+    height:300px;
+    background-color: #181a29;
+  }
+  .index-top >div{
+    
+    height: 100%;
+    width: 90%;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .index-top >div >div{
+    width:20%;
+    height:80%;
+   align-self: center;
+
+  }
+  .index-top >div >div img{
+    height:100%;
+    width:100%;
+  }
+ 
+  .display-food >div:nth-child(1){
+    border-bottom:1px solid grey;
+    height: 50px;
+    width:80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .display-food-l{
+    
+    width:20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .display-food-l p{
+    font-size:1.6vw;
+    font-weight: 500
+  }
+  .display-food-r{
+
+    width:60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .display-food-r >p{
+    font-size: 1vw;
+  }
+  .display-food-data{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+  }
+  .display-food-data >div{
+    border:1px solid grey;
+    height: 400px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 20px 0;
+  }
+  .display-food-data >div >div{
+    
+    height:70%;
+  }
+  .display-food-data >div >div img{
+    height:100%;
+    width:100%;
+  }
+  .display-food-data >div >p{
+    height: 8%;
+    font-size: 1vw;
+    overflow: auto;
+    
+  }
+  .display-food-data >div >p:nth-child(3){
+    height: 10%;
+    overflow: hidden;
+    margin-left: 100px;
+  }
