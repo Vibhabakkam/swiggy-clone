@@ -1,16 +1,18 @@
 import{ useState } from "react";
 import './Component.css'
+import { useNavigate } from "react-router-dom";
 function Signup(props) {
     const [userData, setUserData] = useState({ name: "", email: "", password: "" });
     // console.log(userData, "userData check here");
-
+    const router = useNavigate();
     function handleSubmit(event) {
         event.preventDefault();
         // console.log(userData, "after submit");
-        var usersFromDB = JSON.parse(localStorage.getItem("userFromReact")) || [];
+        var usersFromDB = JSON.parse(localStorage.getItem("userData")) || [];
         usersFromDB.push(userData);
-        localStorage.setItem("userForReact", JSON.stringify(usersFromDB));
+        localStorage.setItem("userData", JSON.stringify(usersFromDB));
         setUserData({ name: "", email: "", password: "" });
+        router('/Login');
         alert("Registration Done...");
     }
 
