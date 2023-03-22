@@ -20,7 +20,7 @@ function Addproduct(){
         console.log(e.target.name, e.target.value, "updatingData");
         setUserData({ ...swiggyproduct, [name]: value })
     }
-
+     
 
 return(
     <>
