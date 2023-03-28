@@ -5,7 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import  {Toaster } from 'react-hot-toast';
-<Toaster
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+     <BrowserRouter>
+     <Toaster
   position="top-center"
   reverseOrder={false}
   gutter={8}
@@ -29,10 +34,6 @@ import  {Toaster } from 'react-hot-toast';
       },
     },
   }} ></Toaster>
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
