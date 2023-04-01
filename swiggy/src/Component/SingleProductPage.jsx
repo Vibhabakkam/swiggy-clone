@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./Component.css";
+import Navbar from "./Navbar"
 
 const SingleProductPage = () =>{
     const [singleProduct, setSingleProduct] = useState();
@@ -18,9 +20,11 @@ const SingleProductPage = () =>{
 
     return(
         <>
-        <div>
-        SingleProductPage
-        {singleProduct && <div>
+       <div>
+       <Navbar/>
+       </div>
+        <div className="SingleProductPage" >
+        {singleProduct && <div id="SingleProductPage" >
             <img src ={singleProduct.strDrinkThumb} alt="product"/>
             <h1>{singleProduct.strDrink}</h1>
             <button>Buy</button> 
