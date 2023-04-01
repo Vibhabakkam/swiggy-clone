@@ -40,20 +40,22 @@ function Navbar() {
     <div className="navbar">
       <div>
         <div className="navbar-l">
-          <div>
+          <div >
             <img
               src="https://logosandtypes.com/wp-content/uploads/2021/01/swiggy.svg"
               alt="logo"
             />
           </div>
           <div>
-            <p>
+            {/* <p>
               <strong>Malad West </strong>
               Malad, Malad West, Mumbai, Mah....
-            </p>
-          </div>
-           <input onChange={(e) => handleChange(e)} type="text" placeholder="search for products" />
+            </p> */}
+            <input onChange={(e) => handleChange(e)} type="text" placeholder="search for restrants and food
+            " />
            <button onClick={handleSubmit}>Search</button>
+          </div>
+           
         </div>
         
         <div className="navbar-r">
