@@ -298,3 +298,31 @@ form>div {
   width: 20%;
   height: 300px;
 }
+.navbar-l{
+  border: 1px solid red;
+  width: 600px;
+}
+.navbar-l>div:nth-child(1){
+  border: 1px solid red;
+}
+.navbar-l>div:nth-child(2){
+  border: 1px solid black;
+  height: 50px;
+  width: 500px;
+}
+.navbar-l>div:nth-child(2)>input{
+  height: 50px;
+  width: 300px;
+  
+  font-size: 18px;
+  border: none; 
+  outline: none;
+}
+.navbar-l>div:nth-child(2)>button{
+  height: 50px;
+  width: 100px;
+  
+  font-size: 18px;
+  border: 1px solid black; 
+  outline: none;
+}
