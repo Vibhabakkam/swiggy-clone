@@ -8,13 +8,13 @@ function Home() {
     const[data, setData] = useState();
     const router = useNavigate();
     // console.log(data && data,"data heer");
-
+   
     useEffect(() => {
         fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
         .then(res => res.json())
         .then(Json => setData(Json.drinks));
     }, []);
-
+      
     function addToCart(e){
       console.log(e)
       var dataFromLs = JSON.parse(localStorage.getItem("userData"));
@@ -69,6 +69,7 @@ function Home() {
           </div>
         </div>
       </div>
+
       <div className="display-food">
         <div>
             <div className="display-food-l"><p>1355 restaurants</p></div>
@@ -81,10 +82,10 @@ function Home() {
                 <p>Filters</p>
             </div>
         </div>
-        <div className="display-food-data">
+        <div className="display-food-data"> 
             {data && data.map((e,i) => (
-                <div key={i}>
-                <div><img src={e.strDrinkThumb} alt=""/></div>
+                <div  key={i}>
+                <div onClick={()=> router(`/home/${e.idDrink}`)}><img src={e.strDrinkThumb} alt=""/></div>
                 <p>{e.strDrink}</p>
                 <p>₹150</p>
                 <div><button onClick={ () => addToCart(e)}>Add to Cart</button></div>

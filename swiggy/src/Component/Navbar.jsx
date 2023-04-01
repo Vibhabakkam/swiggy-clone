@@ -3,7 +3,17 @@ import { useNavigate } from "react-router-dom";
 function Navbar() {
   const route = useNavigate();
   const [user, setUser] = useState(null);
-
+  const [searchData, setSearchData] = useState("");
+  console.log (searchData, "searchData")
+   
+  function handleChange (e){
+    setSearchData(e.target.value)
+  }
+  function handleSubmit (e){
+    if (searchData){
+      route (`/search/${searchData}`);
+    }
+  }
   useEffect(() => {
     var dataFromLs = JSON.parse(localStorage.getItem("userData"));
     var currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -42,8 +52,10 @@ function Navbar() {
               Malad, Malad West, Mumbai, Mah....
             </p>
           </div>
+           <input onChange={(e) => handleChange(e)} type="text" placeholder="search for products" />
+           <button onClick={handleSubmit}>Search</button>
         </div>
-
+        
         <div className="navbar-r">
           <div>
             <i className="fa-solid fa-magnifying-glass"></i>
