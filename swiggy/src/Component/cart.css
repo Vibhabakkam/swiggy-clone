@@ -312,3 +312,12 @@ img{
       font-size:1.2vw;
       font-weight:500;
     }
+    #reducer{
+      display: flex;
+      margin-left: 30px;
+      font-size: 18px;
+    }
+    #reducer>button{
+      height: 40px;
+      width: 20px;
+    }

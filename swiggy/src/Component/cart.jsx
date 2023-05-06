@@ -1,8 +1,17 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./cart.css";
+import React, { useReducer } from "react";
+import reducer, {initialState} from "../Reducer/reducer";
 
 function Cart() {
+  const [state, dispatch] =  useReducer(reducer, initialState)
+  function decAge(){
+      dispatch({ type: 'decremented_age'})
+  }
+  function incAge(){
+    dispatch({ type: 'incremented_age'})
+}
   const [userStatus, setUserStatus] = useState(false);
   const [cartData, setCartData] = useState();
   const [userName, setUserName] = useState("");
@@ -119,6 +128,9 @@ function Cart() {
                       </div>
                     </div>
                   ))}
+              </div>
+              <div id="reducer">
+                <button onClick={incAge}>+</button> <p>Quantity</p> {state.age} <button onClick={decAge}>-</button>
               </div>
               <div className="apply-coupon">
                 <i className="fa-solid fa-rug"></i>
